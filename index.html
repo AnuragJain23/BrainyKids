@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Math game</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <section>
+  	<h1>Math Multiplication Quiz Game :)</h1>
+  	<div class="centerdiv">
+  		<div class="insertbox">
+  			<input type="text" id="v1">
+  		</div>
+  		<div class="insertbox">
+  			<p>x</p>
+  		</div>
+  		<div class="insertbox">
+  			<input type="text" id="v2">
+  		</div>
+  		<div class="middlebox">
+  			<input type="text" id="answ"></input>
+  	    </div>
+  	    <div class="answerbox">
+  		   <button onclick="jsgame()">Check Answer</button>
+  	    </div>
+  	</div>
+  </section>
+  <script>
+let n1=Math.floor(Math.random()*100+1);
+let n2=Math.floor(Math.random()*100+1);
+document.getElementById('v1').value=n1;
+document.getElementById('v2').value=n2;
+let ans=n1*n2;
+const jsgame=()=>{
+	var a=document.getElementById('answ').value;
+	if(a==ans)
+	{
+		alert("Well Done ! Your Answer is Correct");
+	}else{
+		alert("The correct answer is "+ans+" . Try Again.");
+	}
+	document.getElementById('answ').value="";
+	 n1=Math.floor(Math.random()*10+1);
+     n2=Math.floor(Math.random()*10+1);
+     document.getElementById('v1').value=n1;
+     document.getElementById('v2').value=n2;
+     ans=n1*n2;
+
+}
+
+  </script>
+ 
+</body>
+</html>
